@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* Сброс отступов и полей для всех элементов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    padding: 0;
+    width: 290px; /* Ширина контейнера */
+    height: 140px; /* Высота контейнера */
+    top: 80px;
+    left: 50%; /* Сдвиг влево на 50% */
+    transform: translateX(-50%); /* Смещение контейнера на половину его ширины влево */
+}
+
+.medium-text {
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    font-weight: 500; /* Medium weight */
+    position: absolute;
+    top: 20px; /* Отступ сверху на 20 пикселей */
+    left: 20px; /* Отступ слева на 20 пикселей */
+    color: #696969;
+}
+
+.nickname {
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 600; /* Medium weight */
+    position: absolute;
+    top: 35px; /* Смещение на 40 пикселей от верха */
+    left: 20px;
+    color: #1b1b1b;
+}
+
+.green-circle {
+    width: 37px; /* Диаметр круга */
+    height: 37px; /* Диаметр круга */
+    background-color: #0ACC58; /* Зеленый цвет фона */
+    border-radius: 50%; /* Скругление углов до круга */
+    position: absolute;
+    top: 18px; /* Отступ сверху на 20 пикселей */
+    right: 20px; /* Отступ справа на 20 пикселей */
+    border: 2px solid #1b1b1b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-circle {
+    width: 31px; /* Диаметр внутреннего круга */
+    height: 31px; /* Диаметр внутреннего круга */
+    border-radius: 50%; /* Скругление углов до круга */
+    overflow: hidden; /* Обрезка содержимого до формы круга */
+}
+
+.circle-image {
+    width: 100%; /* Ширина изображения равна ширине внутреннего круга */
+    height: 100%; /* Высота изображения равна высоте внутреннего круга */
+    object-fit: cover; /* Масштабирование изображения для заполнения круга */
+}
+
+.svg-container {
+    position: absolute;
+    top: 25px; /* Отступ сверху на 20 пикселей */
+    right: 80px; /* Отступ справа на 20 пикселей */
+}
+
+.trapezoid-svg {
+    width: auto; /* Ширина SVG */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0px; /* Отступ сверху */
+    left: 0px; /* Отступ слева */
+    z-index: 1; /* Уровень слоя */
+}
+
+.small-black-rectangle {
+    width: 80px; /* Ширина маленького черного прямоугольника */
+    height: 14px; /* Высота маленького черного прямоугольника */
+    background-color: #1b1b1b; /* Черный цвет фона */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 84px;
+    left: 50%; /* Центровая вертикаль */
+    transform: translateX(-130px); /* Смещение на 50 пикселей от центра */
+    border-radius: 10px; /* Скругление углов */
+    z-index: 2; /* Уровень слоя */
+    display: flex; /* Использование flexbox для центрирования текста */
+    align-items: center; /* Вертикальное центрирование */
+    justify-content: center; /* Горизонтальное центрирование */
+}
+
+.rectangle-text {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 10px;
+    font-weight: 400; /* Medium weight */
+    color: #d9d9d9;
+}
+
+.black-rectangle {
+    width: 290px; /* Ширина прямоугольника */
+    height: 120px; /* Высота прямоугольника */
+    background-color: #1b1b1b; /* Черный цвет фона */
+    position: relative;
+    padding: 0px;
+    top: 20px; /* Отступ сверху */
+    left: 0; /* Левая граница совпадает с левой границей контейнера */
+    border-radius: 20px; /* Скругление углов */
+    z-index: 2; /* Уровень слоя */
+}
+
+.total-profit {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 300; /* Вес шрифта 300 */
+    color: #d9d9d9;
+    top: 15px;
+    left: 15px;
+    position: absolute;
+}
+
+.date {
+    font-family: 'Sunflower', sans-serif;
+    font-size: 10px;
+    font-weight: 500; /* Вес шрифта 500 */
+    color: #a1a1a1;
+    top: 15px;
+    right: 20px;
+    position: absolute;
+}
+
+.profit-amount {
+    font-family: 'Sora', sans-serif;
+    font-size: 32px;
+    font-weight: 200; /* Вес шрифта 300 */
+    color: #fff;
+    top: 50px;
+    left: 15px;
+    position: absolute;
+}
+
+.profit-amount::before {
+    content: '₽ '; /* Значок рубля и пробел перед надписью */
+    color: #a1a1a1; /* Серый цвет значка рубля */
+    font-family: 'Sora', sans-serif;
+    font-size: 32px;
+    font-weight: 100; /* Вес шрифта 300 */
+}
+
+.percent {
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 300; /* Вес шрифта 300 */
+    color: #2DBD67;
+    top: 55px;
+    right: 20px;
+    position: absolute;
+}
+.percent::before{
+    content: '▴ ';
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 100; /* Вес шрифта 300 */
+    color: #2DBD67;
+}
+
+.percent::after{
+    content: '%';
+}
+
+.gray-rectangle {
+    width: 140px; /* Ширина прямоугольника */
+    height: 100px; /* Высота прямоугольника */
+    background-color: #ececec; /* Серый цвет фона */
+    position: absolute;
+    top: 255px; /* Отступ сверху */
+    border-radius: 30px; /* Скругление углов */
+    border: 1px solid #f5f5f5; /* Светло-серая обводка в 1 пиксель */
+    display: flex; /* Использование flexbox для центрирования текста */
+    align-items: center; /* Вертикальное центрирование */
+    justify-content: center; /* Горизонтальное центрирование */
+}
+
+.gray-rectangle.left {
+    left: calc(50% - 145px); /* Центровая вертикаль минус половина ширины плюс 5 пикселей */
+    transform: translateX(0);
+}
+
+.gray-rectangle.right {
+    left: calc(50% + 5px); /* Центровая вертикаль минус половина ширины плюс 5 пикселей */
+    transform: translateX(0);
+}
+
+.white-rectangle {
+    width: 136px; /* Ширина прямоугольника */
+    height: 96px; /* Высота прямоугольника */
+    background-color: #fff; /* Серый цвет фона */
+    border-radius: 28px;
+    position: absolute;
+}
+
+.total {
+    font-family: 'Sora', sans-serif;
+    font-size: 10px;
+    font-weight: 600; /* Вес шрифта 300 */
+    color: #696969;
+    top: 15px;
+    left: 15px;
+    position: absolute; 
+}
+
+.amount {
+    font-family: 'Sora', sans-serif;
+    font-size: 24px;
+    font-weight: 400; /* Вес шрифта 300 */
+    color: #000;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.line {
+    position: relative;
+    top: 70px;
+    width: 110px; /* Ширина линии */
+    border-bottom: 1px solid #a1a1a1; /* Черная линия толщиной 2 пикселя */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+.week {
+    font-family: 'Sora', sans-serif;
+    font-size: 10px;
+    font-weight: 600; /* Вес шрифта 300 */
+    color: #1b1b1b;
+    top: 75px;
+    left: 15px;
+    position: absolute;
+}
+
+.week::before {
+    content: "+";
+    color: #1b1b1b;
+}
+
+.week::after {
+    content: " last 7 day";
+    color: #696969;
+}
+
+.ref {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    left: 6%; /* Центровая вертикаль минус половина ширины плюс 5 пикселей */
+    position: absolute;
+    bottom: 30%;
+}
+
+.more {
+    font-family: 'Rubik', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #454545;
+    right: 7%; /* Центровая вертикаль минус половина ширины плюс 5 пикселей */
+    position: absolute;
+    bottom: 30%;
+}
+.bottom-grey {
+    width: 290px; /* Ширина прямоугольника */
+    height: 80px; /* Высота прямоугольника */
+    background-color: #ececec; /* Серый цвет фона */
+    position: absolute;
+    bottom: 80px;
+    border-radius: 25px; /* Скругление углов */
+    border: 1px solid #f5f5f5; /* Светло-серая обводка в 1 пиксель */
+    display: flex; /* Использование flexbox для центрирования текста */
+    align-items: center; /* Вертикальное центрирование */
+    justify-content: center; /* Горизонтальное центрирование */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bottom-white {
+    width: 286px; /* Ширина прямоугольника */
+    height: 76px; /* Высота прямоугольника */
+    background-color: #fff; /* Серый цвет фона */
+    border-radius: 23px;
+    position: absolute;
+}
+
+.plan {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #696969;
+    left: 15px; /* Центровая вертикаль минус половина ширины плюс 5 пикселей */
+    position: absolute;
+    top: 15px;
+}
+
+.priority {
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 600; /* Вес шрифта 300 */
+    color: #000;
+    top: 30px;
+    left: 15px;
+    position: absolute;
+}
+
+.priority::before {
+    content: "Xs ";
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 600; /* Вес шрифта 300 */
+    color: #000;
+}
+
+
+ .upgrade-rectangle {
+    width: 93px; /* Ширина прямоугольника */
+    height: 30px; /* Высота прямоугольника */
+    background-color: #1b1b1b; /* Серый цвет фона */
+    border-radius: 15px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+ }
+
+ .upgrade {
+    font-family: 'Sora', sans-serif;
+    font-size: 10px;
+    font-weight: 600; /* Вес шрифта 300 */
+    color: #f5f5f5;
+    top: 9px;
+    left: 8px;
+    position: absolute;
+ }
+
+ .black-circle {
+    width: 24px; /* Диаметр круга */
+    height: 24px; /* Диаметр круга */
+    background-color: #1b1b1b; /* Зеленый цвет фона */
+    border-radius: 50%; /* Скругление углов до круга */
+    position: absolute;
+    top: 2px; /* Отступ сверху на 20 пикселей */
+    right: 2px; /* Отступ справа на 20 пикселей */
+    border: 1px solid #0ACC58;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+ }
+
+ .bottom-line {
+    position: absolute;
+    bottom: 50px;
+    width: 100%; /* Ширина линии */
+    border-top: 1px solid #f5f5f5; /* Черная линия толщиной 2 пикселя */
+    border-bottom: 1px solid #ececec;
+ }
+
+ .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    width: 70px;
+    height: 60px;
+    bottom: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+ }
+
+ .viemka {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: absolute;
+
+ }
+
+ .PlayButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: absolute;
+ }
+
+ .bottom-icon {
+    position:absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 44px;
+    bottom: 3px;
+ }
+
+ .bottom-icon.left {
+    left: 15%;
+ }
+
+ .bottom-icon.right {
+    right: 15%;
+ }
